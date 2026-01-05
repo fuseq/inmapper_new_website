@@ -1,14 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const location = useLocation();
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const isHomePage = location.pathname === '/';
+
+  const sections = ['solutions', 'features', 'about', 'contact'];
+
+  useEffect(() => {
+    if (!isHomePage) return;
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 100;
+
+      for (const sectionId of sections) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetHeight = element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(sectionId);
+            return;
+          }
+        }
+      }
+
+      // If at the top of the page, no section is active
+      if (window.scrollY < 300) {
+        setActiveSection('');
+      }
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [isHomePage]);
 
   const scrollToSection = (sectionId: string) => {
     if (isHomePage) {
@@ -37,20 +70,56 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation - Center */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-2">
             {isHomePage ? (
               <>
-                <button onClick={() => scrollToSection('solutions')} className="text-gray-700 hover:text-primary-500 transition-colors">Çözümler</button>
-                <button onClick={() => scrollToSection('features')} className="text-gray-700 hover:text-primary-500 transition-colors">Özellikler</button>
-                <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-primary-500 transition-colors">Hakkımızda</button>
-                <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-primary-500 transition-colors">İletişim</button>
+                <button 
+                  onClick={() => scrollToSection('solutions')} 
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    activeSection === 'solutions' 
+                      ? 'bg-primary-500 text-white shadow-md' 
+                      : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                  }`}
+                >
+                  Çözümler
+                </button>
+                <button 
+                  onClick={() => scrollToSection('features')} 
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    activeSection === 'features' 
+                      ? 'bg-primary-500 text-white shadow-md' 
+                      : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                  }`}
+                >
+                  Özellikler
+                </button>
+                <button 
+                  onClick={() => scrollToSection('about')} 
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    activeSection === 'about' 
+                      ? 'bg-primary-500 text-white shadow-md' 
+                      : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                  }`}
+                >
+                  Hakkımızda
+                </button>
+                <button 
+                  onClick={() => scrollToSection('contact')} 
+                  className={`px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                    activeSection === 'contact' 
+                      ? 'bg-primary-500 text-white shadow-md' 
+                      : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                  }`}
+                >
+                  İletişim
+                </button>
               </>
             ) : (
               <>
-                <Link to="/#solutions" className="text-gray-700 hover:text-primary-500 transition-colors">Çözümler</Link>
-                <Link to="/#features" className="text-gray-700 hover:text-primary-500 transition-colors">Özellikler</Link>
-                <Link to="/#about" className="text-gray-700 hover:text-primary-500 transition-colors">Hakkımızda</Link>
-                <Link to="/#contact" className="text-gray-700 hover:text-primary-500 transition-colors">İletişim</Link>
+                <Link to="/#solutions" className="px-4 py-2 rounded-full font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300">Çözümler</Link>
+                <Link to="/#features" className="px-4 py-2 rounded-full font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300">Özellikler</Link>
+                <Link to="/#about" className="px-4 py-2 rounded-full font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300">Hakkımızda</Link>
+                <Link to="/#contact" className="px-4 py-2 rounded-full font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300">İletişim</Link>
               </>
             )}
           </nav>
@@ -90,35 +159,51 @@ const Header = () => {
                 <>
                   <button
                     onClick={() => { scrollToSection('solutions'); toggleMenu(); }}
-                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors"
+                    className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                      activeSection === 'solutions' 
+                        ? 'bg-primary-500 text-white' 
+                        : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                    }`}
                   >
                     Çözümler
                   </button>
                   <button
                     onClick={() => { scrollToSection('features'); toggleMenu(); }}
-                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors"
+                    className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                      activeSection === 'features' 
+                        ? 'bg-primary-500 text-white' 
+                        : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                    }`}
                   >
                     Özellikler
                   </button>
                   <button
                     onClick={() => { scrollToSection('about'); toggleMenu(); }}
-                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors"
+                    className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                      activeSection === 'about' 
+                        ? 'bg-primary-500 text-white' 
+                        : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                    }`}
                   >
                     Hakkımızda
                   </button>
                   <button
                     onClick={() => { scrollToSection('contact'); toggleMenu(); }}
-                    className="block w-full text-left px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors"
+                    className={`block w-full text-left px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
+                      activeSection === 'contact' 
+                        ? 'bg-primary-500 text-white' 
+                        : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
+                    }`}
                   >
                     İletişim
                   </button>
                 </>
               ) : (
                 <>
-                  <Link to="/#solutions" className="block px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors" onClick={toggleMenu}>Çözümler</Link>
-                  <Link to="/#features" className="block px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors" onClick={toggleMenu}>Özellikler</Link>
-                  <Link to="/#about" className="block px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors" onClick={toggleMenu}>Hakkımızda</Link>
-                  <Link to="/#contact" className="block px-3 py-2 text-gray-700 hover:text-primary-500 transition-colors" onClick={toggleMenu}>İletişim</Link>
+                  <Link to="/#solutions" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>Çözümler</Link>
+                  <Link to="/#features" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>Özellikler</Link>
+                  <Link to="/#about" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>Hakkımızda</Link>
+                  <Link to="/#contact" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>İletişim</Link>
                 </>
               )}
               <Link 
