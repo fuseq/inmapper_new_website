@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { ArrowRight, Play, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 // Compass directions for animation
 const directions = [0, 45, 90, 135, 180, 225, 270, 315, 360];
 
@@ -85,7 +86,7 @@ const Hero = () => {
   }, [isMapVisible]);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-white to-gray-50 pt-28 lg:pt-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-primary-50 via-white to-gray-50 pt-28 lg:pt-32 pb-16 lg:pb-8 overflow-hidden">
       {/* Floating Logos Animation */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {floatingLogos.map((logo) => (
@@ -114,28 +115,19 @@ const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="space-y-1"
+              className="space-y-6"
             >
-              <h1 className="font-antonio text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 leading-[0.9] tracking-tight">
-                İÇ MEKAN
+              <h1 className="font-antonio text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 tracking-tight">
+                İÇERİDEKİ
               </h1>
-              <h1 className="font-antonio text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold leading-[0.9] tracking-tight">
-                <span className="text-gray-900">NAVİGASYON</span>
+              <h1 className="font-antonio text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-primary-500 tracking-tight">
+                YOL GÖSTERİCİNİZ
               </h1>
-              <h1 className="font-antonio text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-primary-500 leading-[0.9] tracking-tight">
-                TEKNOLOJİSİ
-              </h1>
+              <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-lg mt-2">
+                En son konumlandırma teknolojisiyle iç mekanlarınızı dönüştürün. 
+                Ziyaretçilerinize kusursuz navigasyon deneyimi sunun.
+              </p>
             </motion.div>
-
-            <motion.p 
-              className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-lg"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            >
-              En son konumlandırma teknolojisiyle iç mekanlarınızı dönüştürün. 
-              Ziyaretçilerinize kusursuz navigasyon deneyimi sunun.
-            </motion.p>
 
             <motion.div 
               className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto pt-2"

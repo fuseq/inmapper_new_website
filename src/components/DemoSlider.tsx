@@ -100,7 +100,7 @@ const DemoSlider = () => {
           <line x1="2" y1="2" x2="22" y2="22" strokeWidth="2.5" className="text-red-300" stroke="currentColor" />
         </svg>
       </div>
-    </div>
+      </div>
   );
 
   // QR Visual - Rounded square style
@@ -136,7 +136,7 @@ const DemoSlider = () => {
         <div className="flex flex-col items-center group">
           <div className="w-10 h-10 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
             <TabletSmartphone className="h-5 w-5 md:h-8 md:w-8 text-primary-500" />
-          </div>
+              </div>
           <span className="text-xs md:text-sm text-gray-600 mt-1 md:mt-2 font-medium">Tablet</span>
         </div>
         
@@ -144,7 +144,7 @@ const DemoSlider = () => {
         <div className="flex flex-col items-center group">
           <div className="w-10 h-10 md:w-16 md:h-16 bg-white rounded-xl md:rounded-2xl shadow-lg flex items-center justify-center group-hover:scale-110 transition-transform">
             <Monitor className="h-5 w-5 md:h-8 md:w-8 text-primary-500" />
-          </div>
+        </div>
           <span className="text-xs md:text-sm text-gray-600 mt-1 md:mt-2 font-medium">Masaüstü</span>
         </div>
         

@@ -133,8 +133,8 @@ const Solutions = () => {
           </div>
 
           {/* Right - Industry Grid */}
-          <div className="flex-1">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5">
+          <div className="flex-1 w-full">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-5 max-w-md md:max-w-none mx-auto lg:mx-0">
               {industries.map((industry, index) => {
                 const Icon = industry.icon;
                 const isSelected = index === selectedIndex;
