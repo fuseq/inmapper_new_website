@@ -75,7 +75,7 @@ const Header = () => {
             />
             <div className="ml-3 flex items-baseline">
               <span className="text-2xl lg:text-3xl font-bold text-primary-500">in</span>
-              <span className={`text-2xl lg:text-3xl font-bold transition-colors duration-300 ${isScrolled ? 'text-gray-600' : 'text-gray-700'}`}>Mapper</span>
+              <span className="text-2xl lg:text-3xl font-bold" style={{ color: '#808080' }}>Mapper</span>
             </div>
           </Link>
 
