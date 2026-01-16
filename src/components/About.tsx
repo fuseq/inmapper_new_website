@@ -1,11 +1,12 @@
 import React from 'react';
 import { Award, Globe, Users2, TrendingUp } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const stats = [
-  { icon: Globe, value: '50+', label: 'Ülke' },
-  { icon: Users2, value: '1M+', label: 'Günlük Kullanıcı' },
-  { icon: Award, value: '%99.9', label: 'Çalışma Süresi' },
-  { icon: TrendingUp, value: '15x', label: 'Ortalama ROI' }
+  { icon: Globe, value: '50+', labelKey: 'Ülke' },
+  { icon: Users2, value: '1M+', labelKey: 'Günlük Kullanıcı' },
+  { icon: Award, value: '%99.9', labelKey: 'Çalışma Süresi' },
+  { icon: TrendingUp, value: '15x', labelKey: 'Ortalama ROI' }
 ];
 
 const About = () => {
@@ -17,12 +18,11 @@ const About = () => {
           <div className="space-y-8 text-center lg:text-left">
             <div className="space-y-4">
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-                İç Mekan Konum Zekasının
-                <span className="text-primary-500 block">Geleceğine Öncülük Ediyoruz</span>
+                <T>İç Mekan Konum Zekasının</T>
+                <span className="text-primary-500 block"><T>Geleceğine Öncülük Ediyoruz</T></span>
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
-                On yılı aşkın süredir iç mekan konumlandırma teknolojisine öncülük ediyor, 
-                dünya genelindeki kuruluşların daha akıllı ve daha bağlantılı alanlar yaratmasına yardımcı oluyoruz.
+                <T>On yılı aşkın süredir iç mekan konumlandırma teknolojisine öncülük ediyor, dünya genelindeki kuruluşların daha akıllı ve daha bağlantılı alanlar yaratmasına yardımcı oluyoruz.</T>
               </p>
             </div>
 
@@ -30,22 +30,22 @@ const About = () => {
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-2 h-2 bg-primary-500 rounded-full mt-3"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">İnovasyon Öncelikli</h4>
-                  <p className="text-gray-600">Son teknoloji algoritmalar ve sürekli Ar-Ge yatırımı bizi her zaman önde tutuyor.</p>
+                  <h4 className="font-semibold text-gray-900 mb-1"><T>İnovasyon Öncelikli</T></h4>
+                  <p className="text-gray-600"><T>Son teknoloji algoritmalar ve sürekli Ar-Ge yatırımı bizi her zaman önde tutuyor.</T></p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-2 h-2 bg-primary-500 rounded-full mt-3"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Ölçeklenebilir Çözümler</h4>
-                  <p className="text-gray-600">Tek binadan kurumsal dağıtımlara kadar çözümlerimiz sorunsuz şekilde ölçeklenir.</p>
+                  <h4 className="font-semibold text-gray-900 mb-1"><T>Ölçeklenebilir Çözümler</T></h4>
+                  <p className="text-gray-600"><T>Tek binadan kurumsal dağıtımlara kadar çözümlerimiz sorunsuz şekilde ölçeklenir.</T></p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-2 h-2 bg-primary-500 rounded-full mt-3"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 mb-1">Uzman Destek</h4>
-                  <p className="text-gray-600">Özel destek ekibimiz ve profesyonel hizmetlerimiz başarılı uygulamaları garanti eder.</p>
+                  <h4 className="font-semibold text-gray-900 mb-1"><T>Uzman Destek</T></h4>
+                  <p className="text-gray-600"><T>Özel destek ekibimiz ve profesyonel hizmetlerimiz başarılı uygulamaları garanti eder.</T></p>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ const About = () => {
                   <div key={index} className="text-center">
                     <Icon className="h-8 w-8 text-primary-500 mx-auto mb-2" />
                     <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
+                    <div className="text-sm text-gray-600"><T>{stat.labelKey}</T></div>
                   </div>
                 );
               })}
@@ -69,10 +69,10 @@ const About = () => {
             <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-8 shadow-2xl">
               <div className="bg-white rounded-xl p-6 space-y-6">
                 <div className="flex items-center justify-between">
-                  <h4 className="font-semibold text-gray-900">Küresel Varlık</h4>
+                  <h4 className="font-semibold text-gray-900"><T>Küresel Varlık</T></h4>
                   <div className="text-sm text-green-600 font-medium flex items-center">
                     <div className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                    Canlı
+                    <T>Canlı</T>
                   </div>
                 </div>
                 
@@ -80,25 +80,25 @@ const About = () => {
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-primary-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Türkiye</span>
+                      <span className="text-sm font-medium"><T>Türkiye</T></span>
                     </div>
-                    <span className="text-xs text-gray-600">150+ lokasyon</span>
+                    <span className="text-xs text-gray-600"><T>150+ lokasyon</T></span>
                   </div>
                   
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Avrupa</span>
+                      <span className="text-sm font-medium"><T>Avrupa</T></span>
                     </div>
-                    <span className="text-xs text-gray-600">180+ lokasyon</span>
+                    <span className="text-xs text-gray-600"><T>180+ lokasyon</T></span>
                   </div>
                   
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-                      <span className="text-sm font-medium">Orta Doğu</span>
+                      <span className="text-sm font-medium"><T>Orta Doğu</T></span>
                     </div>
-                    <span className="text-xs text-gray-600">120+ lokasyon</span>
+                    <span className="text-xs text-gray-600"><T>120+ lokasyon</T></span>
                   </div>
                 </div>
               </div>

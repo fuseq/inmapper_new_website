@@ -152,7 +152,7 @@ const Solutions = () => {
                     <h3 className={`font-bold text-sm md:text-base leading-tight ${
                       isSelected ? 'text-primary-600' : 'text-gray-800'
                     }`}>
-                      {industry.title}
+                      <T>{industry.title}</T>
                     </h3>
                     {/* Mobile: Show "Yakında" or arrow indicator */}
                     <div className="lg:hidden mt-2">
