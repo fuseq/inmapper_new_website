@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { T } from '../contexts/TranslationContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

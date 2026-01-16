@@ -15,7 +15,6 @@ import {
   Factory,
   ArrowRight
 } from 'lucide-react';
-import { T } from '../contexts/TranslationContext';
 
 const industries = [
   {
@@ -153,7 +152,7 @@ const Solutions = () => {
                     <h3 className={`font-bold text-sm md:text-base leading-tight ${
                       isSelected ? 'text-primary-600' : 'text-gray-800'
                     }`}>
-                      <T>{industry.title}</T>
+                      {industry.title}
                     </h3>
                     {/* Mobile: Show "Yakında" or arrow indicator */}
                     <div className="lg:hidden mt-2">

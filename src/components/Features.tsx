@@ -1,6 +1,5 @@
 import React from 'react';
 import { MapPin, Shield, Zap, Users, BarChart3, Settings } from 'lucide-react';
-import { T } from '../contexts/TranslationContext';
 
 const features = [
   {
@@ -55,10 +54,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            <T>Her Kullanım Alanı İçin Güçlü Özellikler</T>
+            Her Kullanım Alanı İçin Güçlü Özellikler
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            <T>Kapsamlı platformumuz, olağanüstü iç mekan konum deneyimleri oluşturmak için ihtiyacınız olan her şeyi sunar.</T>
+            Kapsamlı platformumuz, olağanüstü iç mekan konum deneyimleri oluşturmak için ihtiyacınız olan her şeyi sunar.
           </p>
         </div>
 
@@ -74,10 +73,10 @@ const Features = () => {
                   <Icon className="h-6 w-6" />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  <T>{feature.title}</T>
+                  {feature.title}
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  <T>{feature.description}</T>
+                  {feature.description}
                 </p>
               </div>
             );

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { MapPin, ChevronLeft, ChevronRight, Plane, Ship, ShoppingBag } from 'lucide-react';
-import { T } from '../contexts/TranslationContext';
 
 const demos = [
   {
@@ -139,13 +138,13 @@ const MapShowcase = () => {
         <div className="text-center mb-8 px-6">
           <div className="inline-flex items-center bg-primary-500/20 text-primary-400 px-4 py-2 rounded-full text-sm font-medium mb-4 backdrop-blur-sm border border-primary-500/30">
             <MapPin className="h-4 w-4 mr-2" />
-            <T>Canlı Projeler</T>
+            Canlı Projeler
           </div>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            <T>Haritalarımızı</T> <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600"><T>Keşfedin</T></span>
+            Haritalarımızı <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600">Keşfedin</span>
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto">
-            <T>Türkiye'nin önde gelen mekanlarında aktif olarak kullanılan interaktif haritalarımız</T>
+            Türkiye'nin önde gelen mekanlarında aktif olarak kullanılan interaktif haritalarımız
           </p>
         </div>
 
