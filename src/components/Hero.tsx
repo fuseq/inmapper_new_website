@@ -2,7 +2,6 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { ArrowRight, Play, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lottie from 'lottie-react';
-import { T } from '../contexts/TranslationContext';
 
 // Generate random floating logos data
 const generateFloatingLogos = (count: number) => {
@@ -133,13 +132,14 @@ const Hero = () => {
               className="space-y-6"
             >
               <h1 className="font-antonio text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-gray-900 tracking-tight">
-                <T>İÇERİDEKİ</T>
+                İÇERİDEKİ
               </h1>
               <h1 className="font-antonio text-5xl sm:text-6xl md:text-6xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-primary-500 tracking-tight">
-                <T>YOL GÖSTERİCİNİZ</T>
+                YOL GÖSTERİCİNİZ
               </h1>
               <p className="text-base lg:text-lg text-gray-600 leading-relaxed max-w-lg mt-2">
-                <T>En son konumlandırma teknolojisiyle iç mekanlarınızı dönüştürün. Ziyaretçilerinize kusursuz navigasyon deneyimi sunun.</T>
+                En son konumlandırma teknolojisiyle iç mekanlarınızı dönüştürün. 
+                Ziyaretçilerinize kusursuz navigasyon deneyimi sunun.
               </p>
             </motion.div>
 
@@ -158,7 +158,7 @@ const Hero = () => {
                 }}
                 className="inline-flex items-center justify-center px-8 py-4 text-base bg-primary-500 text-white font-semibold rounded-full hover:bg-primary-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
-                <T>Canlı Örnekler</T>
+                Canlı Örnekler
                 <ArrowRight className="ml-2 h-5 w-5" />
               </button>
               <button 
@@ -166,7 +166,7 @@ const Hero = () => {
                 className="inline-flex items-center justify-center px-8 py-4 text-base border-2 border-gray-300 text-gray-700 font-semibold rounded-full hover:border-primary-500 hover:text-primary-500 transition-all duration-200 bg-white/50 backdrop-blur-sm"
               >
                 <Play className="mr-2 h-5 w-5" />
-                <T>Nasıl Çalışır?</T>
+                Nasıl Çalışır?
               </button>
             </motion.div>
 
@@ -178,17 +178,17 @@ const Hero = () => {
             >
               <div className="text-center">
                 <div className="text-xl lg:text-2xl font-bold text-gray-900">%99.9</div>
-                <div className="text-xs text-gray-600"><T>Doğruluk</T></div>
+                <div className="text-xs text-gray-600">Doğruluk</div>
               </div>
               <div className="w-px h-10 bg-gray-300"></div>
               <div className="text-center">
                 <div className="text-xl lg:text-2xl font-bold text-gray-900">500+</div>
-                <div className="text-xs text-gray-600"><T>Kurulum</T></div>
+                <div className="text-xs text-gray-600">Kurulum</div>
               </div>
               <div className="w-px h-10 bg-gray-300"></div>
               <div className="text-center">
                 <div className="text-xl lg:text-2xl font-bold text-gray-900">50M+</div>
-                <div className="text-xs text-gray-600"><T>Kullanıcı</T></div>
+                <div className="text-xs text-gray-600">Kullanıcı</div>
               </div>
             </motion.div>
           </div>
@@ -238,11 +238,11 @@ const Hero = () => {
                           transition={{ delay: 0.3 }}
                         >
                           <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 leading-tight">
-                            <T>Kaybolmayın,</T>
+                            Kaybolmayın,
                           </h3>
                           <h3 className="text-2xl sm:text-3xl font-bold leading-tight">
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 to-primary-600">
-                              <T>Keşfedin!</T>
+                              Keşfedin!
                             </span>
                           </h3>
                         </motion.div>
@@ -273,7 +273,7 @@ const Hero = () => {
                             transition={{ delay: 0.5 }}
                           >
                             <Play className="w-6 h-6" fill="currentColor" />
-                            <T>Haritayı Keşfet</T>
+                            Haritayı Keşfet
                           </motion.button>
                         </div>
                       </motion.div>

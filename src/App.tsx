@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { TranslationProvider } from './contexts/TranslationContext';
 import HomePage from './pages/HomePage';
 import SolutionDetail from './pages/SolutionDetail';
 
@@ -28,16 +27,14 @@ const ScrollToSection: React.FC<{ children: React.ReactNode }> = ({ children }) 
 
 function App() {
   return (
-    <TranslationProvider sourceLanguage="tr">
-      <Router>
-        <ScrollToSection>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/cozumler/:slug" element={<SolutionDetail />} />
-          </Routes>
-        </ScrollToSection>
-      </Router>
-    </TranslationProvider>
+    <Router>
+      <ScrollToSection>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/cozumler/:slug" element={<SolutionDetail />} />
+        </Routes>
+      </ScrollToSection>
+    </Router>
   );
 }
 
