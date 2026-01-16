@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Instagram, Mail } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const Footer = () => {
   return (
@@ -21,7 +22,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              Kurumsal müşteriler için iç mekan konumlandırma ve konum zekası çözümlerinin lider sağlayıcısı.
+              <T>Kurumsal müşteriler için iç mekan konumlandırma ve konum zekası çözümlerinin lider sağlayıcısı.</T>
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
@@ -41,46 +42,46 @@ const Footer = () => {
 
           {/* Ürünler */}
           <div>
-            <h4 className="font-semibold mb-4 text-white">Ürünler</h4>
+            <h4 className="font-semibold mb-4 text-white"><T>Ürünler</T></h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Indoor SDK</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Analitik Platform</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Beacon Yönetimi</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">API Servisleri</a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Analitik Platform</T></a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Beacon Yönetimi</T></a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><T>API Servisleri</T></a></li>
             </ul>
           </div>
 
           {/* Çözümler */}
           <div>
-            <h4 className="font-semibold mb-4 text-white">Çözümler</h4>
+            <h4 className="font-semibold mb-4 text-white"><T>Çözümler</T></h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/cozumler/airport" className="text-gray-400 hover:text-primary-400 transition-colors">Havaalanı</Link></li>
+              <li><Link to="/cozumler/airport" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Havaalanı</T></Link></li>
               <li><Link to="/cozumler/mall" className="text-gray-400 hover:text-primary-400 transition-colors">AVM</Link></li>
-              <li><Link to="/cozumler/fair" className="text-gray-400 hover:text-primary-400 transition-colors">Fuar</Link></li>
-              <li><Link to="/cozumler/hospital" className="text-gray-400 hover:text-primary-400 transition-colors">Hastane</Link></li>
+              <li><Link to="/cozumler/fair" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Fuar</T></Link></li>
+              <li><Link to="/cozumler/hospital" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Hastane</T></Link></li>
             </ul>
           </div>
 
           {/* Şirket */}
           <div>
-            <h4 className="font-semibold mb-4 text-white">Şirket</h4>
+            <h4 className="font-semibold mb-4 text-white"><T>Şirket</T></h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="#about" className="text-gray-400 hover:text-primary-400 transition-colors">Hakkımızda</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Kariyer</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">Basın</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">İş Ortakları</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Hakkımızda</T></a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Kariyer</T></a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><T>Basın</T></a></li>
+              <li><a href="#" className="text-gray-400 hover:text-primary-400 transition-colors"><T>İş Ortakları</T></a></li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © 2025 inMapper. Tüm hakları saklıdır.
+            © 2025 inMapper. <T>Tüm hakları saklıdır.</T>
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-500 hover:text-primary-400 text-sm transition-colors">Gizlilik Politikası</a>
-            <a href="#" className="text-gray-500 hover:text-primary-400 text-sm transition-colors">Kullanım Şartları</a>
-            <a href="#" className="text-gray-500 hover:text-primary-400 text-sm transition-colors">Çerez Politikası</a>
+            <a href="#" className="text-gray-500 hover:text-primary-400 text-sm transition-colors"><T>Gizlilik Politikası</T></a>
+            <a href="#" className="text-gray-500 hover:text-primary-400 text-sm transition-colors"><T>Kullanım Şartları</T></a>
+            <a href="#" className="text-gray-500 hover:text-primary-400 text-sm transition-colors"><T>Çerez Politikası</T></a>
           </div>
         </div>
       </div>

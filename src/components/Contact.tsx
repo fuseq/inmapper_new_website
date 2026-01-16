@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -27,10 +28,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
-            Başlamaya Hazır mısınız?
+            <T>Başlamaya Hazır mısınız?</T>
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            İç mekan konumlandırma ihtiyaçlarınızı görüşmek ve inMapper'ın alanınızı nasıl dönüştürebileceğini keşfetmek için ekibimizle iletişime geçin.
+            <T>İç mekan konumlandırma ihtiyaçlarınızı görüşmek ve inMapper'ın alanınızı nasıl dönüştürebileceğini keşfetmek için ekibimizle iletişime geçin.</T>
           </p>
         </div>
 
@@ -38,14 +39,14 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8 text-center lg:text-left">
             <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">İletişime Geçin</h3>
+              <h3 className="text-2xl font-semibold text-gray-900 mb-6"><T>İletişime Geçin</T></h3>
               <div className="space-y-6 flex flex-col items-center lg:items-start">
                 <div className="flex items-start space-x-4 text-left w-[220px] lg:w-auto">
                   <div className="flex-shrink-0 p-3 bg-primary-100 text-primary-600 rounded-xl">
                     <Mail className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">E-posta</h4>
+                    <h4 className="font-semibold text-gray-900"><T>E-posta</T></h4>
                     <p className="text-gray-600">info@inmapper.com</p>
                   </div>
                 </div>
@@ -55,7 +56,7 @@ const Contact = () => {
                     <Phone className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Telefon</h4>
+                    <h4 className="font-semibold text-gray-900"><T>Telefon</T></h4>
                     <p className="text-gray-600">+90 (212) 123 45 67</p>
                   </div>
                 </div>
@@ -65,7 +66,7 @@ const Contact = () => {
                     <MapPin className="h-6 w-6" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Ofis</h4>
+                    <h4 className="font-semibold text-gray-900"><T>Ofis</T></h4>
                     <p className="text-gray-600">
                       Teknopark İstanbul<br />
                       Pendik, İstanbul 34906
@@ -76,12 +77,12 @@ const Contact = () => {
             </div>
 
             <div className="bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl p-8 text-white">
-              <h4 className="text-xl font-semibold mb-4">Demo Planlayın</h4>
+              <h4 className="text-xl font-semibold mb-4"><T>Demo Planlayın</T></h4>
               <p className="mb-6 opacity-90">
-                Kullanım alanınıza özel kişiselleştirilmiş bir demo ile teknolojimizi çalışırken görün.
+                <T>Kullanım alanınıza özel kişiselleştirilmiş bir demo ile teknolojimizi çalışırken görün.</T>
               </p>
               <button className="bg-white text-primary-600 px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition-colors">
-                Demo Rezervasyonu
+                <T>Demo Rezervasyonu</T>
               </button>
             </div>
           </div>
@@ -92,7 +93,7 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Ad Soyad *
+                    <T>Ad Soyad</T> *
                   </label>
                   <input
                     type="text"
@@ -102,12 +103,11 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                    placeholder="Adınız"
                   />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    E-posta *
+                    <T>E-posta</T> *
                   </label>
                   <input
                     type="email"
@@ -117,14 +117,13 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                    placeholder="email@sirket.com"
                   />
                 </div>
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                  Şirket
+                  <T>Şirket</T>
                 </label>
                 <input
                   type="text"
@@ -133,13 +132,12 @@ const Contact = () => {
                   value={formData.company}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
-                  placeholder="Şirket adı"
                 />
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Mesaj *
+                  <T>Mesaj</T> *
                 </label>
                 <textarea
                   id="message"
@@ -149,7 +147,6 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
-                  placeholder="Projeniz hakkında bize bilgi verin..."
                 ></textarea>
               </div>
 
@@ -157,7 +154,7 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-primary-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-primary-600 transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
               >
-                <span>Mesaj Gönder</span>
+                <span><T>Mesaj Gönder</T></span>
                 <Send className="h-5 w-5" />
               </button>
             </form>

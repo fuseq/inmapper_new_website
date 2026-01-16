@@ -15,6 +15,7 @@ import {
   Factory,
   ArrowRight
 } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const industries = [
   {
@@ -100,7 +101,7 @@ const Solutions = () => {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-bold text-gray-900">
-            Her Sektöre Özel Çözümler
+            <T>Her Sektöre Özel Çözümler</T>
           </h2>
         </div>
 
@@ -121,12 +122,12 @@ const Solutions = () => {
                   to={`/cozumler/${selectedIndustry.slug}`}
                   className="absolute bottom-8 left-8 inline-flex items-center bg-white/25 backdrop-blur-md text-white px-6 py-3 rounded-full hover:bg-white/40 transition-all duration-300 border border-white/40 shadow-lg"
                 >
-                  <span className="font-semibold text-lg">Daha Fazla</span>
+                  <span className="font-semibold text-lg"><T>Daha Fazla</T></span>
                   <ArrowRight className="h-5 w-5 ml-3" />
                 </Link>
               ) : (
                 <div className="absolute bottom-8 left-8 inline-flex items-center bg-white/25 backdrop-blur-md text-white px-6 py-3 rounded-full border border-white/40 shadow-lg">
-                  <span className="font-semibold text-lg">Yakında</span>
+                  <span className="font-semibold text-lg"><T>Yakında</T></span>
                 </div>
               )}
             </div>
@@ -158,10 +159,10 @@ const Solutions = () => {
                     <div className="lg:hidden mt-2">
                       {industry.slug ? (
                         <span className="inline-flex items-center text-xs text-primary-500 font-medium">
-                          Keşfet <ArrowRight className="h-3 w-3 ml-1" />
+                          <T>Keşfet</T> <ArrowRight className="h-3 w-3 ml-1" />
                         </span>
                       ) : (
-                        <span className="text-xs text-gray-400 font-medium">Yakında</span>
+                        <span className="text-xs text-gray-400 font-medium"><T>Yakında</T></span>
                       )}
                     </div>
                   </>
@@ -209,9 +210,9 @@ const Solutions = () => {
         {/* Bottom Text */}
         <div className="text-center mt-16 text-gray-600">
           <p>
-            Sektörünüzü bulamadınız mı? Her iş için özel çözümler üretiyoruz.
+            <T>Sektörünüzü bulamadınız mı? Her iş için özel çözümler üretiyoruz.</T>
             <br />
-            Bilgi için <Link to="/#contact" className="text-primary-500 font-semibold hover:underline">bizimle iletişime geçin</Link>.
+            <T>Bilgi için</T> <Link to="/#contact" className="text-primary-500 font-semibold hover:underline"><T>bizimle iletişime geçin</T></Link>.
           </p>
         </div>
       </div>

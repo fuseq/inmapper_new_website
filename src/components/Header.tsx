@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { T } from '../contexts/TranslationContext';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -91,7 +92,7 @@ const Header = () => {
                       : `${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`
                   }`}
                 >
-                  Çözümler
+                  <T>Çözümler</T>
                 </button>
                 <button 
                   onClick={() => scrollToSection('features')} 
@@ -101,7 +102,7 @@ const Header = () => {
                       : `${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`
                   }`}
                 >
-                  Özellikler
+                  <T>Özellikler</T>
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')} 
@@ -111,7 +112,7 @@ const Header = () => {
                       : `${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`
                   }`}
                 >
-                  Hakkımızda
+                  <T>Hakkımızda</T>
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')} 
@@ -121,15 +122,15 @@ const Header = () => {
                       : `${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`
                   }`}
                 >
-                  İletişim
+                  <T>İletişim</T>
                 </button>
               </>
             ) : (
               <>
-                <Link to="/#solutions" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}>Çözümler</Link>
-                <Link to="/#features" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}>Özellikler</Link>
-                <Link to="/#about" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}>Hakkımızda</Link>
-                <Link to="/#contact" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}>İletişim</Link>
+                <Link to="/#solutions" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}><T>Çözümler</T></Link>
+                <Link to="/#features" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}><T>Özellikler</T></Link>
+                <Link to="/#about" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}><T>Hakkımızda</T></Link>
+                <Link to="/#contact" className={`px-6 py-3 rounded-full text-base lg:text-lg font-medium transition-all duration-300 ${isScrolled ? 'text-gray-700 hover:bg-gray-100' : 'text-gray-800 hover:bg-white/20'} hover:text-primary-500`}><T>İletişim</T></Link>
               </>
             )}
           </nav>
@@ -146,7 +147,7 @@ const Header = () => {
               }}
               className="bg-primary-500 text-white px-8 py-3.5 rounded-full hover:bg-primary-600 transition-all duration-300 text-base lg:text-lg font-semibold shadow-md hover:shadow-lg"
             >
-              Demo Talep Et
+              <T>Demo Talep Et</T>
             </Link>
           </div>
 
@@ -175,7 +176,7 @@ const Header = () => {
                         : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
                     }`}
                   >
-                    Çözümler
+                    <T>Çözümler</T>
                   </button>
                   <button
                     onClick={() => { scrollToSection('features'); toggleMenu(); }}
@@ -185,7 +186,7 @@ const Header = () => {
                         : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
                     }`}
                   >
-                    Özellikler
+                    <T>Özellikler</T>
                   </button>
                   <button
                     onClick={() => { scrollToSection('about'); toggleMenu(); }}
@@ -195,7 +196,7 @@ const Header = () => {
                         : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
                     }`}
                   >
-                    Hakkımızda
+                    <T>Hakkımızda</T>
                   </button>
                   <button
                     onClick={() => { scrollToSection('contact'); toggleMenu(); }}
@@ -205,15 +206,15 @@ const Header = () => {
                         : 'text-gray-700 hover:text-primary-500 hover:bg-primary-50'
                     }`}
                   >
-                    İletişim
+                    <T>İletişim</T>
                   </button>
                 </>
               ) : (
                 <>
-                  <Link to="/#solutions" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>Çözümler</Link>
-                  <Link to="/#features" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>Özellikler</Link>
-                  <Link to="/#about" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>Hakkımızda</Link>
-                  <Link to="/#contact" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}>İletişim</Link>
+                  <Link to="/#solutions" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}><T>Çözümler</T></Link>
+                  <Link to="/#features" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}><T>Özellikler</T></Link>
+                  <Link to="/#about" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}><T>Hakkımızda</T></Link>
+                  <Link to="/#contact" className="block px-4 py-3 rounded-xl font-medium text-gray-700 hover:text-primary-500 hover:bg-primary-50 transition-all duration-300" onClick={toggleMenu}><T>İletişim</T></Link>
                 </>
               )}
               <Link 
@@ -227,7 +228,7 @@ const Header = () => {
                 }}
                 className="block w-full mt-2 bg-primary-500 text-white px-4 py-2 rounded-lg hover:bg-primary-600 transition-colors text-center font-medium"
               >
-                Demo Talep Et
+                <T>Demo Talep Et</T>
               </Link>
             </div>
           </div>
