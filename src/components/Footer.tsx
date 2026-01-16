@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Twitter, Linkedin, Instagram, Mail } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const Footer = () => {
   return (

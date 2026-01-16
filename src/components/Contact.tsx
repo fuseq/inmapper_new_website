@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const Contact = () => {
   const [formData, setFormData] = useState({

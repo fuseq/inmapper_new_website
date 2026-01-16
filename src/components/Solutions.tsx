@@ -15,6 +15,7 @@ import {
   Factory,
   ArrowRight
 } from 'lucide-react';
+import { T } from '../contexts/TranslationContext';
 
 const industries = [
   {

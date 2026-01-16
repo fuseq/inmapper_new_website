@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { ArrowRight, Play, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Lottie from 'lottie-react';
+import { T } from '../contexts/TranslationContext';
 
 // Generate random floating logos data
 const generateFloatingLogos = (count: number) => {
